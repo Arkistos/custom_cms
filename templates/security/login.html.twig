@@ -3,5 +3,9 @@
 {% block title %}Hello SecurityController!{% endblock %}
 
 {% block body %}
+    {% if error %}
+        <p class="alert">{{error.messageKey|trans(error.messageData, 'security')}}</p>
+    {% endif %}
+    
     {{ form(loginForm) }}
 {% endblock %}
